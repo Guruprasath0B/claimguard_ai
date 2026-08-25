@@ -1,0 +1,79 @@
+# ==============================
+# Core LangChain / LangGraph
+# ==============================
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langgraph>=0.0.20
+langchain-community>=0.2.0
+
+# ==============================
+# LLM / Structured Output
+# ==============================
+openai>=1.30.0
+pydantic>=2.5.0
+pydantic-settings>=2.0.0
+
+# ==============================
+# Environment / Utilities
+# ==============================
+python-dotenv>=1.0.0
+requests>=2.31.0
+rich>=13.7.0
+colorama>=0.4.6
+
+# ==============================
+# Privacy / PII- PHI Protection
+# ==============================
+presidio-analyzer>=2.2.0
+presidio-anonymizer>=2.2.0
+spacy>=3.7.0
+
+# ==============================
+# RAG / Embeddings / Qdrant
+# ==============================
+qdrant-client>=1.10.0
+langchain-qdrant>=0.1.0
+
+# ==============================
+# Long-Term Memory
+# ==============================
+mem0ai>=0.1.0
+redis>=5.0.0
+
+# ==============================
+# MCP
+# ==============================
+mcp>=1.0.0
+
+# ==============================
+# Guardrails / Validation
+# ==============================
+guardrails-ai>=0.5.0
+
+# ==============================
+# Observability
+# ==============================
+langsmith>=0.1.0
+
+# ==============================
+# API / MCP Service Layer
+# ==============================
+fastapi>=0.100.0
+uvicorn>=0.22.0
+
+# ==============================
+# Document Processing
+# ==============================
+pypdf>=4.0.0
+python-docx>=1.1.0
+
+# ==============================
+# CLI / Interface
+# ==============================
+typer>=0.12.0
+
+# ==============================
+# Qdrant Packages
+# ==============================
+qdrant-client
+langchain-qdrant

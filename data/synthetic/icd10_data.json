@@ -1,0 +1,92 @@
+[
+  {
+    "code_id": "ICD-00001",
+    "icd10_code": "K81.0",
+    "diagnosis_name": "Acute Cholecystitis",
+    "category": "K",
+    "description": "Standardized ICD-10 classification for Acute Cholecystitis.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00002",
+    "icd10_code": "K35.80",
+    "diagnosis_name": "Acute Appendicitis",
+    "category": "K",
+    "description": "Standardized ICD-10 classification for Acute Appendicitis.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00003",
+    "icd10_code": "J18.9",
+    "diagnosis_name": "Community Acquired Pneumonia",
+    "category": "J",
+    "description": "Standardized ICD-10 classification for Community Acquired Pneumonia.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00004",
+    "icd10_code": "I20.0",
+    "diagnosis_name": "Unstable Angina",
+    "category": "I",
+    "description": "Standardized ICD-10 classification for Unstable Angina.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00005",
+    "icd10_code": "I21.9",
+    "diagnosis_name": "Acute Myocardial Infarction",
+    "category": "I",
+    "description": "Standardized ICD-10 classification for Acute Myocardial Infarction.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00006",
+    "icd10_code": "N20.0",
+    "diagnosis_name": "Renal Calculus",
+    "category": "N",
+    "description": "Standardized ICD-10 classification for Renal Calculus.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00007",
+    "icd10_code": "K40.90",
+    "diagnosis_name": "Inguinal Hernia",
+    "category": "K",
+    "description": "Standardized ICD-10 classification for Inguinal Hernia.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00008",
+    "icd10_code": "M17.9",
+    "diagnosis_name": "Osteoarthritis of Knee",
+    "category": "M",
+    "description": "Standardized ICD-10 classification for Osteoarthritis of Knee.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00009",
+    "icd10_code": "H25.9",
+    "diagnosis_name": "Cataract",
+    "category": "H",
+    "description": "Standardized ICD-10 classification for Cataract.",
+    "active": true,
+    "version": "ICD-10"
+  },
+  {
+    "code_id": "ICD-00010",
+    "icd10_code": "N39.0",
+    "diagnosis_name": "Urinary Tract Infection",
+    "category": "N",
+    "description": "Standardized ICD-10 classification for Urinary Tract Infection.",
+    "active": true,
+    "version": "ICD-10"
+  }
+]

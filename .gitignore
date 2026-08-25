@@ -1,0 +1,76 @@
+# ============================================================
+# ClaimGuard AI - Git Ignore
+# ============================================================
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local databases / vector stores
+qdrant_db/
+chroma_db/
+faiss_index/
+
+# Local Mem0 / Redis data
+mem0_data/
+redis_data/
+
+# Generated runtime files
+runtime/
+tmp/
+temp/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Generated synthetic data
+# Uncomment if you don't want large generated datasets in Git
+# data/synthetic/
+# data/claims/
+# data/tariff_master/
+
+# Secrets / certificates
+*.pem
+*.key
+*.crt
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# Local configuration
+*.local

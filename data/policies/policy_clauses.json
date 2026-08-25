@@ -1,0 +1,72 @@
+[
+  {
+    "clause_id": "POL-ROOM-001",
+    "policy_type": "INDIVIDUAL_HEALTH",
+    "category": "ROOM_RENT",
+    "title": "Room Rent Limitation",
+    "text": "Eligible room rent shall be limited to the percentage of Sum Insured specified in the policy schedule. Where the insured occupies a room above the eligible limit, applicable proportional deductions may apply to associated medical expenses as specified by the policy."
+  },
+  {
+    "clause_id": "POL-NP-001",
+    "policy_type": "INDIVIDUAL_HEALTH",
+    "category": "NON_PAYABLE",
+    "title": "Non-Payable Items",
+    "text": "Expenses relating to specified non-medical and administrative consumables shall not be payable where excluded under the applicable policy terms."
+  },
+  {
+    "clause_id": "POL-PED-001",
+    "policy_type": "INDIVIDUAL_HEALTH",
+    "category": "PED",
+    "title": "Pre-Existing Disease Waiting Period",
+    "text": "Expenses related to declared pre-existing diseases may be subject to the waiting period specified in the applicable policy schedule."
+  },
+  {
+    "clause_id": "POL-SI-001",
+    "policy_type": "INDIVIDUAL_HEALTH",
+    "category": "SUM_INSURED",
+    "title": "Maximum Liability",
+    "text": "The insurer's liability shall not exceed the available Sum Insured and applicable policy limits."
+  },
+  {
+    "clause_id": "POL-CL-001",
+    "policy_type": "INDIVIDUAL_HEALTH",
+    "category": "CLAIM",
+    "title": "Cashless Pre-Authorization",
+    "text": "Cashless treatment is subject to pre-authorization, policy coverage, medical necessity, and verification of applicable exclusions and limits."
+  },
+  {
+    "clause_id": "POL-DIS-001",
+    "policy_type": "INDIVIDUAL_HEALTH",
+    "category": "DISCHARGE",
+    "title": "Discharge Claim Assessment",
+    "text": "Final discharge assessment shall consider actual treatment rendered, eligible expenses, applicable deductions, policy limits, and supporting documents."
+  },
+  {
+    "clause_id": "POL-FRAUD-001",
+    "policy_type": "INDIVIDUAL_HEALTH",
+    "category": "FRAUD",
+    "title": "Misrepresentation and Fraud",
+    "text": "Material inconsistencies, duplicate billing, artificial unbundling, fabricated documentation, or other suspicious patterns may result in investigation or query."
+  },
+  {
+    "clause_id": "POL-CRITICAL-001",
+    "policy_type": "CRITICAL_ILLNESS",
+    "category": "COVERAGE",
+    "title": "Critical Illness Coverage",
+    "text": "Critical illness benefits are payable subject to the defined covered conditions, diagnosis requirements, waiting periods, and policy limits."
+  },
+  {
+    "clause_id": "POL-SENIOR-001",
+    "policy_type": "SENIOR_CITIZEN",
+    "category": "SENIOR",
+    "title": "Senior Citizen Coverage",
+    "text": "Senior citizen claims shall be evaluated against the applicable policy schedule, co-payment provisions, waiting periods, exclusions, and admissibility rules."
+  },
+  {
+    "clause_id": "POL-FLOATER-001",
+    "policy_type": "FAMILY_FLOATER",
+    "category": "FLOATER",
+    "title": "Family Floater Sum Insured",
+    "text": "The available Sum Insured is shared among covered members of the family floater policy and shall be reduced by eligible claims during the policy year."
+  }
+]

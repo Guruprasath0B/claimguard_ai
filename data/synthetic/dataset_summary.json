@@ -1,0 +1,15 @@
+{
+  "generator": "ClaimGuard AI Synthetic Data Generator",
+  "version": "1.0",
+  "random_seed": 42,
+  "synthetic_only": true,
+  "records": {
+    "patients": 500,
+    "claims": 2000,
+    "claim_line_items": 12000,
+    "hospitals": 120,
+    "tariffs": 1685,
+    "icd10_codes": 10,
+    "policy_clauses": 10
+  }
+}
