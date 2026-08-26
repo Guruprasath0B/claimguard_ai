@@ -1,10 +1,6 @@
-# memory/mem0.py
-
 from typing import Any, Dict, List, Optional
 
 from mem0 import Memory
-
-from config.settings import settings
 
 
 class Mem0Service:
@@ -19,6 +15,7 @@ class Mem0Service:
         messages: List[Dict[str, str]],
         metadata: Optional[Dict[str, Any]] = None,
     ) -> Any:
+
         if not user_id:
             raise ValueError("user_id is required.")
 
@@ -37,6 +34,7 @@ class Mem0Service:
         query: str,
         limit: int = 5,
     ) -> List[Dict[str, Any]]:
+
         if not user_id:
             raise ValueError("user_id is required.")
 
@@ -44,8 +42,8 @@ class Mem0Service:
             return []
 
         result = self.memory.search(
-            query,
-            user_id=user_id,
+            query=query,
+            filters={"user_id": user_id},
             limit=limit,
         )
 
@@ -58,6 +56,7 @@ class Mem0Service:
         self,
         user_id: str,
     ) -> List[Dict[str, Any]]:
+
         if not user_id:
             raise ValueError("user_id is required.")
 

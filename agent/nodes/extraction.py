@@ -6,17 +6,25 @@ from ingestion.extractor import claim_extractor
 
 def extraction_node(state: ClaimState) -> Dict[str, Any]:
     try:
+        sanitized_input = state.get(
+            "sanitized_input",
+            "",
+        )
+
+        if not sanitized_input:
+            return {
+                "error": "Sanitized claim input is missing.",
+                "current_step": "extraction_failed",
+            }
+
         records = [
             {
-                "text": state.get(
-                    "sanitized_input",
-                    "",
-                )
+                "text": sanitized_input,
             }
         ]
 
         claim_data = claim_extractor.extract(
-            records,
+            records=records,
             token_map=state.get(
                 "presidio_token_map",
                 {},

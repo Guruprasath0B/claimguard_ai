@@ -16,7 +16,7 @@ class PresidioService:
         self._register_claim_identifiers()
 
     def _register_claim_identifiers(self) -> None:
-        """Register only ClaimGuard identifiers that must be protected."""
+        """Register ClaimGuard identifiers that must be protected."""
 
         # --------------------------------------------------
         # UHID / Patient ID
@@ -54,11 +54,14 @@ class PresidioService:
 
         # --------------------------------------------------
         # Aadhaar
+        # Supports:
+        # 4827 1630 5941
+        # 482716305941
         # --------------------------------------------------
 
         aadhaar_pattern = Pattern(
             name="aadhaar_pattern",
-            regex=r"\b\d{4}\s\d{4}\s\d{4}\b",
+            regex=r"\b\d{4}\s?\d{4}\s?\d{4}\b",
             score=0.99,
         )
 
@@ -87,6 +90,7 @@ class PresidioService:
         )
 
     def analyze(self, text: str) -> List[Any]:
+
         if not text.strip():
             return []
 
@@ -143,21 +147,10 @@ class PresidioService:
             entity = result.entity_type
 
             # --------------------------------------------------
-            # Protect only actual PII/PHI.
-            # Do NOT anonymize:
-            #
-            # Claim ID
-            # Policy Number
-            # Hospital ID
-            # Dates
-            # Amounts
-            # Diagnosis
-            # Procedure
+            # Clean PERSON detection
             # --------------------------------------------------
 
             if entity == "PERSON":
-                # Presidio can sometimes capture surrounding
-                # field text. Keep only a clean name-like value.
                 if "\n" in original:
                     original = original.split(
                         "\n",

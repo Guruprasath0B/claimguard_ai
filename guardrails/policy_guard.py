@@ -1,6 +1,18 @@
-# guardrails/policy_guard.py
-
 from typing import Any, Dict, List
+
+
+def safe_float(
+    value: Any,
+    default: float = 0.0,
+) -> float:
+    """Safely convert a value to float."""
+    if value is None:
+        return default
+
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
 
 
 class PolicyGuard:
@@ -30,26 +42,31 @@ class PolicyGuard:
                 "Adjudication result is missing."
             )
 
-        approved_amount = float(
+        # ----------------------------------------------------
+        # SAFE NUMERIC CONVERSION
+        # ----------------------------------------------------
+
+        approved_amount = safe_float(
             adjudication.get(
-                "approved_amount_inr",
-                0,
+                "approved_amount_inr"
             )
         )
 
-        requested_amount = float(
+        requested_amount = safe_float(
             claim_data.get(
-                "requested_amount",
-                0,
+                "requested_amount"
             )
         )
 
-        sum_insured = float(
+        sum_insured = safe_float(
             claim_data.get(
-                "sum_insured",
-                0,
+                "sum_insured"
             )
         )
+
+        # ----------------------------------------------------
+        # VALIDATION
+        # ----------------------------------------------------
 
         if approved_amount > requested_amount:
             errors.append(

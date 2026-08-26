@@ -1,9 +1,8 @@
-# agent/state.py
-
 from typing import Any, Dict, List, Optional, TypedDict
 
 
 class ClaimState(TypedDict, total=False):
+
     # Input
     claim_id: str
     raw_input: str
@@ -23,6 +22,9 @@ class ClaimState(TypedDict, total=False):
     # Patient memory
     patient_id: str
     patient_history: List[Dict[str, Any]]
+
+    # PED
+    ped_assessment: Dict[str, Any]
 
     # Clinical assessment
     icd10_results: Dict[str, Any]

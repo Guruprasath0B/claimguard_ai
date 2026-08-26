@@ -3,9 +3,14 @@ from typing import Literal
 from agent.state import ClaimState
 
 
+# =========================================================
+# PRIVACY
+# =========================================================
+
 def route_after_privacy(
     state: ClaimState,
 ) -> Literal["extraction", "error"]:
+
     if state.get("error"):
         return "error"
 
@@ -15,13 +20,21 @@ def route_after_privacy(
     return "extraction"
 
 
+# =========================================================
+# EXTRACTION
+# =========================================================
+
 def route_after_extraction(
     state: ClaimState,
-) -> Literal["memory", "policy", "error"]:
+) -> Literal["memory", "ped", "policy", "error"]:
+
     if state.get("error"):
         return "error"
 
-    claim_data = state.get("claim_data", {})
+    claim_data = state.get(
+        "claim_data",
+        {},
+    )
 
     if not claim_data:
         return "error"
@@ -29,24 +42,71 @@ def route_after_extraction(
     if claim_data.get("patient_identifier"):
         return "memory"
 
+    return "ped"
+
+
+# =========================================================
+# MEMORY
+# =========================================================
+
+def route_after_memory(
+    state: ClaimState,
+) -> Literal["ped", "error"]:
+
+    if state.get("error"):
+        return "error"
+
+    return "ped"
+
+
+# =========================================================
+# PED
+# =========================================================
+
+def route_after_ped(
+    state: ClaimState,
+) -> Literal["policy", "error"]:
+
+    if state.get("error"):
+        return "error"
+
+    if not state.get("ped_assessment"):
+        return "error"
+
     return "policy"
 
+
+# =========================================================
+# POLICY
+# =========================================================
 
 def route_after_policy(
     state: ClaimState,
 ) -> Literal["clinical", "error"]:
+
     if state.get("error"):
         return "error"
 
-    if not state.get("retrieved_policy_clauses"):
+    if not state.get(
+        "retrieved_policy_clauses"
+    ):
         return "error"
 
     return "clinical"
 
 
+# =========================================================
+# CLINICAL
+# =========================================================
+
 def route_after_clinical(
     state: ClaimState,
-) -> Literal["tariff", "adjudication", "error"]:
+) -> Literal[
+    "tariff",
+    "adjudication",
+    "error",
+]:
+
     if state.get("error"):
         return "error"
 
@@ -58,15 +118,24 @@ def route_after_clinical(
     if clinical.get("requires_review"):
         return "adjudication"
 
-    if not state.get("claim_data", {}).get("procedure"):
+    if not state.get(
+        "claim_data",
+        {},
+    ).get("procedure"):
+
         return "adjudication"
 
     return "tariff"
 
 
+# =========================================================
+# TARIFF
+# =========================================================
+
 def route_after_tariff(
     state: ClaimState,
 ) -> Literal["calculation", "error"]:
+
     if state.get("error"):
         return "error"
 
@@ -76,31 +145,53 @@ def route_after_tariff(
     return "calculation"
 
 
+# =========================================================
+# CALCULATION
+# =========================================================
+
 def route_after_calculation(
     state: ClaimState,
 ) -> Literal["fraud", "error"]:
+
     if state.get("error"):
+        return "error"
+
+    if not state.get(
+        "calculation_results"
+    ):
         return "error"
 
     return "fraud"
 
 
+# =========================================================
+# FRAUD
+# =========================================================
+
 def route_after_fraud(
     state: ClaimState,
 ) -> Literal["adjudication", "error"]:
+
     if state.get("error"):
         return "error"
 
     return "adjudication"
 
 
+# =========================================================
+# ADJUDICATION
+# =========================================================
+
 def route_after_adjudication(
     state: ClaimState,
 ) -> Literal["finalization", "error"]:
+
     if state.get("error"):
         return "error"
 
-    if not state.get("adjudication_result"):
+    if not state.get(
+        "adjudication_result"
+    ):
         return "error"
 
     return "finalization"
